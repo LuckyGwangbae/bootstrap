@@ -1,0 +1,48 @@
+* {
+    font-family: 'Gowun Dodum', sans-serif;
+    }
+
+.mytitle {
+    background-color: green;
+height: 250px;
+width: 100%;
+
+background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) , url(https://movie-phinf.pstatic.net/20210715_95/1626338192428gTnJl_JPEG/movie_image.jpg);
+background-position: center;
+background-size: cover;
+
+color: white;
+
+/* display는 4줄씩 같이 다닌다.
+flex-direction: row로 변경을 해서 사용을 한다.  */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+/* mytitle > button는 mytitle 안에 들어 있는 button을 설정 해준다라는 뜻. */
+.mytitle > button{
+    /* width(가로 너비)
+       height(세로 너비) */
+    width: 200px;
+    height: 50px;
+
+    background-color: transparent;
+    color: white;
+    
+    /* border-radius란? 
+    - 테두리를 둥글게 만드는 속성 */
+    border-radius: 50px;
+
+    /* 1px 선굵기가 1px이고 solid - 실선이다. white- 흰색이다 */
+    border: 1px solid white;
+
+    margin-top: 10px;
+}
+
+/* 영화 기록하기 버튼에 마우스를 올렸을 때 두껍게 표현이 되게 만는 속성
+hover - 마우스를 올렸을 때 두껍게 표현 */
+.mytitle > button:hover {
+    border: 2px solid white;
+}
