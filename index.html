@@ -16,10 +16,15 @@
     <title>부트스트랩 연습하기</title>
     <!-- 구글 폰트  -->
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+
     <!-- Javascript -->
     <script>
-        function hey() {
-            alert('안녕!');
+        // script에 Jquery 입혀서 영화 기록하기 눌렀을 때 카드가 나오고 닫기를 눌렀을 때 사라지게 만드는 버튼 
+        function opne_box() {
+            $('#post-box').show()
+        }
+        function close_box() {
+            $('#post-box').hide()
         }
 
     </script>
@@ -28,13 +33,13 @@
 <body>
     <div class="mytitle">
         <h1>내 생애 최고의 영화들❤️</h1>
-        <button onclick="hey()"> 👉 영화 기록하기 👈</button>
+        <button onclick="opne_box()"> 👉 영화 기록하기 👈</button>
     </div>
 
     <!-- 23.08.02 공부 내용 -->
-    <div class="mypost">
+    <div class="mypost" id="post-box">
         <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <input type="email" class="form-control" id="url" placeholder="name@example.com">
             <label for="floatingInput">영화 URL</label>
         </div>
         <div class="input-group mb-3">
@@ -55,14 +60,14 @@
         </div>
         <div class="mybtn">
             <button type="button" class="btn btn-info"> 기록 하기 </button>
-            <button type="button" class="btn btn-light"> 닫기 </button>
+            <button onclick="close_box()" type="button" class="btn btn-light"> 닫기 </button>
         </div>
     </div>
 
 
     <div class="wrap">
         <!-- row-cols-md-4 g-4 md-4에서 만들고 싶은 카드의 수만큼 적으면 카드 양이 변경 된다. -->
-        <div class="row row-cols-1 row-cols-md-4 g-4">
+        <div id="cards-box" class="row row-cols-1 row-cols-md-4 g-4">
             <div class="col">
                 <div class="card">
                     <img src="https://movie-phinf.pstatic.net/20210728_221/1627440327667GyoYj_JPEG/movie_image.jpg"

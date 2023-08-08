@@ -67,7 +67,8 @@ hover - 마우스를 올렸을 때 두껍게 표현 */
 
     box-shadow: 0px 0px 3px 0px gray;
     padding: 20px;
-
+/* 영화 기록하기 버튼이 먼저 나오지 않게 만들어 놓는 코드 */
+    display: none;
 }
 
 .mybtn {
