@@ -21,7 +21,7 @@
 
     <!-- Javascript -->
     <script>
-        // 23.09.02 ajax 입력
+        // 23.09.02 ajax  입력
         $(document).ready(function () {
             listing();
         });
@@ -42,6 +42,8 @@
                         let star = rows[i]['star']
                         let comment = rows[i]['comment']
 
+                        let star_image = '⭐'.repeat(star)
+
                         let temp_html = `<div class="col">
                 <div class="card">
                     <img src="${image}"
@@ -49,7 +51,7 @@
                     <div class="card-body">
                         <h5 class="card-title">${title}</h5>
                         <p class="card-text">${desc}</p>
-                        <p>⭐⭐⭐</p>
+                        <p>${star_image}</p>
                         <p class="mycomment">${comment}</p>
                     </div>
                 </div>
