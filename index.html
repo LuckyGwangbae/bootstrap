@@ -1,4 +1,5 @@
-<!doctype html>
+<html lang="en">
+<html lang="en">
 <html lang="en">
 
 <head>
@@ -13,12 +14,54 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
+    <!doctype html>
     <title>부트스트랩 연습하기</title>
     <!-- 구글 폰트  -->
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 
     <!-- Javascript -->
     <script>
+        // 23.09.02 ajax 입력
+        $(document).ready(function () {
+            listing();
+        });
+
+        function listing() {
+            $('#cards-box').empty()
+
+            $.ajax({
+                type: "GET",
+                url: "http://spartacodingclub.shop/web/api/movie",
+                data: {},
+                success: function (response) {
+                    let rows = response['movies']
+                    for (let i = 0; i < rows.length; i++) {
+                        let title = rows[i]['title']
+                        let desc = rows[i]['desc']
+                        let image = rows[i]['image']
+                        let star = rows[i]['star']
+                        let comment = rows[i]['comment']
+
+                        let temp_html = `<div class="col">
+                <div class="card">
+                    <img src="${image}"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">${title}</h5>
+                        <p class="card-text">${desc}</p>
+                        <p>⭐⭐⭐</p>
+                        <p class="mycomment">${comment}</p>
+                    </div>
+                </div>
+            </div>`
+
+                        $('#cards-box').append(temp_html)
+                    }
+                }
+            })
+        }
+
+
         // script에 Jquery 입혀서 영화 기록하기 눌렀을 때 카드가 나오고 닫기를 눌렀을 때 사라지게 만드는 버튼 
         function opne_box() {
             $('#post-box').show()
@@ -63,7 +106,6 @@
             <button onclick="close_box()" type="button" class="btn btn-light"> 닫기 </button>
         </div>
     </div>
-
 
     <div class="wrap">
         <!-- row-cols-md-4 g-4 md-4에서 만들고 싶은 카드의 수만큼 적으면 카드 양이 변경 된다. -->
