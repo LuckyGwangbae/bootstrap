@@ -39,12 +39,17 @@ align-items: center;
     border: 1px solid white;
 
     margin-top: 10px;
+    transition: color 0.25s, border-color 0.25s, box-shadow 0.25, transform 0.25;
 }
 
 /* 영화 기록하기 버튼에 마우스를 올렸을 때 두껍게 표현이 되게 만는 속성
 hover - 마우스를 올렸을 때 두껍게 표현 */
 .mytitle > button:hover {
-    border: 2px solid white;
+    border-color: violet ;
+    color: white;
+    box-shadow: 0 0.5em 0.5em -0.4em #f1ff5c;
+    transform: translateY(0.25em);
+    cursor: pointer;
 }
 
 /* 23.08.02 추가 */
